@@ -71,7 +71,7 @@ networks:
   proxy_net:
     driver: bridge
   back_net:
-    driver: bridge    
+    driver: bridge
 
 volumes:
   certs:

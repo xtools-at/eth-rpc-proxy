@@ -8,7 +8,7 @@ tls:
 # Enabling metrics
 # Setup enviroment variables in /metrics directory for pushing data to your Prometheus instance
 monitoring:
-  enabled: true
+  enabled: false
   jvm: false
   extended: false
   prometheus:
@@ -32,31 +32,26 @@ proxy:
   tls:
     enabled: false
   routes:
-    - id: mainnet
-      blockchain: ethereum
-    - id: optimism
+#    - id: mainnet
+#      blockchain: ethereum
+    - id: devnet
       blockchain: ethereum-classic
-    - id: arbitrum
-      blockchain: matic
-    - id: goerli
-      blockchain: goerli
+#    - id: arbitrum
+#      blockchain: matic
+#    - id: goerli
+#      blockchain: goerli
 
-# Connections to clients for various endpoints 
+# Connections to clients for various endpoints
 # Leave only those you are going to use
 cluster:
   defaults:
     - chains:
-        - ethereum
-    - chains:
-        - goerli
-    - chains:
-        - optimism
-    - chains:
-        - arbitrum
+        - ethereum-classic
+#    - chains:
+#        - goerli
+#    - chains:
+#        - optimism
+#    - chains:
+#        - arbitrum
   include:
-    - "geth_main.yaml"
-    - "geth_archive.yaml"
-    - "eth_public.yaml"
-    - "goerli.yaml"
-    - "optimism.yaml"
-    - "arbitrum.yaml"
+    - "devnet.yaml"
