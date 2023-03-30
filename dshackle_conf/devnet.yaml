@@ -17,8 +17,8 @@ upstreams:
       ethereum:
         rpc:
           url: "http://157.230.66.23:9650/ext/bc/2NXVLcGbemMjwyexwigxCoqn7UJ6DdeJdWNPxcWX4Y2eDem1aW/rpc"
-        ws:
-          url: "ws://157.230.66.23:9650/ext/bc/2NXVLcGbemMjwyexwigxCoqn7UJ6DdeJdWNPxcWX4Y2eDem1aW/rpc"
+#        ws:
+#          url: "ws://157.230.66.23:9650/ext/bc/2NXVLcGbemMjwyexwigxCoqn7UJ6DdeJdWNPxcWX4Y2eDem1aW/rpc"
     methods:
       enabled:
         - name: eth_accounts
