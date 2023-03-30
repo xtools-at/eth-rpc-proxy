@@ -1,4 +1,5 @@
-# edit path and copy to /etc/systemd/system/rpc.service
+# edit paths and copy to /etc/systemd/system/rpc.service
+# then enable: systemctl enable rpc.service
 
 [Unit]
 Description=RPC Proxy Docker Service
@@ -8,8 +9,8 @@ StartLimitIntervalSec=60
 
 [Service]
 WorkingDirectory=/root/eth-rpc-proxy
-ExecStart=/usr/local/bin/docker-compose up
-ExecStop=/usr/local/bin/docker-compose down
+ExecStart=/usr/bin/docker-compose up
+ExecStop=/usr/bin/docker-compose down
 TimeoutStartSec=0
 Restart=on-failure
 StartLimitBurst=3
