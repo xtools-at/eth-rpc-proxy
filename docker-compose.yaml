@@ -13,11 +13,6 @@ services:
       - certs:/etc/nginx/certs
       - vhosts:/etc/nginx/vhost.d
       - html:/usr/share/nginx/html
-    environment:
-      - VIRTUAL_HOST=${DOMAIN}
-      - VIRTUAL_PORT=8080
-      - LETSENCRYPT_HOST=${DOMAIN}
-      - LETSENCRYPT_EMAIL=${EMAIL}
     labels:
       - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
     networks:

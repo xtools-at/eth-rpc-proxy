@@ -34,7 +34,7 @@ proxy:
   routes:
 #    - id: mainnet
 #      blockchain: ethereum
-    - id: devnet
+    - id: testnet
       blockchain: ethereum-classic
 #    - id: arbitrum
 #      blockchain: matic
@@ -54,4 +54,4 @@ cluster:
 #    - chains:
 #        - arbitrum
   include:
-    - "devnet.yaml"
+    - "beam_test.yaml"
