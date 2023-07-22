@@ -30,7 +30,7 @@ services:
 
   dshackle:
     container_name: dshackle
-    image: emeraldpay/dshackle:0.13
+    image: emeraldpay/dshackle:0.14
     restart: unless-stopped
     volumes:
       - ./dshackle_conf:/etc/dshackle

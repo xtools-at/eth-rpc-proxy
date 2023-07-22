@@ -17,7 +17,7 @@ monitoring:
     port: 8081
     path: /metrics
 
-# Enabling redis database for caching, it should be running in docker container 
+# Enabling redis database for caching, it should be running in docker container
 cache:
   redis:
     enabled: true
@@ -32,26 +32,23 @@ proxy:
   tls:
     enabled: false
   routes:
-#    - id: mainnet
-#      blockchain: ethereum
-    - id: testnet
+    - id: rpc
       blockchain: ethereum-classic
-#    - id: arbitrum
-#      blockchain: matic
-#    - id: goerli
-#      blockchain: goerli
 
-# Connections to clients for various endpoints
-# Leave only those you are going to use
 cluster:
   defaults:
     - chains:
         - ethereum-classic
-#    - chains:
-#        - goerli
-#    - chains:
-#        - optimism
-#    - chains:
-#        - arbitrum
   include:
     - "beam_test.yaml"
+
+# Include dshackle logging
+# Mount the container's /var/log directory using docker-compose to access
+# logs from the host machine
+access-log:
+  enabled: true
+  filename: "/var/log/dshackle_access_log.jsonl"
+
+request-log:
+  enabled: true
+  filename: "/var/log/dshackle_request_log.jsonl"
